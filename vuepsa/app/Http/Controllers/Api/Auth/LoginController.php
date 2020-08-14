@@ -7,6 +7,27 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
+
+
+    public function login(Request $request){
+        $response = Http::post('url',[
+            'grant_type' => 'password',
+            'client_id'  => 2,
+            'client_secret'=>'7uVnQjy0u8smBLAcftkGXCvTShNeWaH4G85IxAnj',
+            'email' => $request->email,
+            'password' =>$request->password,
+            'scope' =>''
+        ]);
+
+        if ($response->clientError()) {
+            return $response->json('error email atau user salah',400);
+        } elseif ($response->serverError()) {
+            return $response->json('Server error',500);
+        }
+
+        return $response->body();
+    }
+
     /**
      * Display a listing of the resource.
      *
