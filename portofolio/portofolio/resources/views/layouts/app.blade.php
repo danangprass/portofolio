@@ -53,7 +53,7 @@
                                 </li>
                             @endif
                         @else
-                        <li class="nav-link"><a href="{{url('/post')}}">Post</a></li>
+                        <li class="nav-link"><a href="{{url('/posts')}}">Post</a></li>
                         <li class="nav-link"><a href="{{url('/offices')}}">Offices</a></li>
                         <li class="nav-link"><a href="{{url('/schools')}}">School</a></li>
                             <li class="nav-item dropdown">

@@ -14,7 +14,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        $data='test data';
+        return view('pages.post', compact('data'));
     }
 
     /**
